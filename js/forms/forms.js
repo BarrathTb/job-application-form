@@ -5,9 +5,9 @@ $(document).ready(function () {
 	$(".btn-continue").on("click", function (e) {
 		e.preventDefault();
 
-		var $currentTab = $(this).closest(".tab-pane");
-		var targetTabSelector = $(this).attr("data-bs-target");
-		var formToValidate = $currentTab.find("form.needs-validation")[0];
+		const $currentTab = $(this).closest(".tab-pane");
+		const targetTabSelector = $(this).attr("data-bs-target");
+		const formToValidate = $currentTab.find("form.needs-validation")[0];
 
 		// Check if the form is valid and show next tab
 		if (formToValidate.checkValidity()) {
