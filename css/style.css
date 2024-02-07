@@ -2,12 +2,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 
-div.site-container {
+div.mountian-container {
 	width: 100%;
 	height: 100%;
 	background: #ddd;
 	font-family: "Montserrat", sans-serif;
 }
+
 div.mountians {
 	position: absolute;
 }
@@ -22,11 +23,20 @@ div.mountians {
 }
 
 #site-nav-tabs {
-	position: sticky;
 	background: #fff;
-	z-index: 999;
+	position: relative;
 }
 
 .nav-tabs {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content-container {
+	width: 100%; /* Full width */
+	clear: both; /* Avoid floating elements on either side */
+}
+
+/* Hide content by default */
+.tab-pane {
+	display: none;
 }

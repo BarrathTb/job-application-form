@@ -6,132 +6,305 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Job Application Form</title>
-
-		<link href="../css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../css/style.css" />
+		<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/custom-styles.css" rel="stylesheet" />
 	</head>
 	<body>
-		<div class="site-container">
-			<div class="container-lg mx-auto" id="nav-container">
-				<ul class="nav nav-tabs justify-content-center" id="site-nav-tabs" role="tabs">
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link active"
-							id="personal-info-tab"
-							data-bs-toggle="tab"
-							href="#personal-info-section"
+		<div class="site-container mx-auto my-auto">
+			<div class="header-main mx-auto">
+				<nav class="navbar bg-body-tertiary" style="border-bottom: 3px solid #003e7a">
+					<div class="container-lg mx-auto" id="nav-container">
+						<a class="navbar-brand me-5" href="/index.html"
+							><img
+								src="/images/66_17_logo-yellowstone.gif"
+								alt="Yellowstone National Park Lodges"
+								width="auto"
+								height="auto"
+						/></a>
+						<ul class="nav nav-tabs justify-content-center d-none d-lg-flex" id="site-nav-tabs" role="tabs">
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link active"
+									id="personal-info-tab"
+									data-bs-toggle="tab"
+									href="#personal-info-section"
+									type="button"
+									role="tab"
+									aria-controls="main"
+									aria-selected="true"
+									>Personal Info</a
+								>
+							</li>
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link"
+									id="positions-tab"
+									data-bs-toggle="tab"
+									href="#positions-section"
+									type="button"
+									role="tab"
+									aria-controls="main"
+									aria-selected="false"
+									>Positions</a
+								>
+							</li>
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link"
+									id="work-experiance-tab"
+									data-bs-toggle="tab"
+									href="#work-experience-section"
+									type="button"
+									role="tab"
+									aria-controls="experience"
+									aria-selected="false"
+									>Work Experience</a
+								>
+							</li>
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link"
+									id="education-tab"
+									data-bs-toggle="tab"
+									href="#education-section"
+									type="button"
+									role="tab"
+									aria-controls="education"
+									aria-selected="false"
+									>Education</a
+								>
+							</li>
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link"
+									id="work-ability-tab"
+									data-bs-toggle="tab"
+									href="#work-ability-section"
+									type="button"
+									role="tab"
+									aria-controls="ability"
+									aria-selected="false"
+									>Work Eligibility</a
+								>
+							</li>
+							<li class="nav-item" role="sectionInfo">
+								<a
+									class="nav-link"
+									id="#additional-tab"
+									data-bs-toggle="tab"
+									href="#additional-info-section"
+									type="button"
+									role="tab"
+									aria-controls="additional"
+									aria-selected="false"
+									>Additional Information</a
+								>
+							</li>
+						</ul>
+						<button
+							class="btn btn-outline-primary d-lg-none ms-auto"
 							type="button"
-							role="tab"
-							aria-controls="main"
-							aria-selected="true"
-							>Personal Info</a
-						>
-					</li>
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link"
-							data-bs-toggle="tab"
-							href="#positions-info-section"
-							type="button"
-							role="tab"
-							aria-controls="main"
-							aria-selected="false"
-							>Positions</a
-						>
-					</li>
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link"
-							id="work-experiance-tab"
-							data-bs-toggle="tab"
-							href="#work-experience-section"
-							type="button"
-							role="tab"
-							aria-controls="experience"
-							aria-selected="false"
-							>Work Experience</a
-						>
-					</li>
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link"
-							id="education-tab"
-							data-bs-toggle="tab"
-							href="#education"
-							type="button"
-							role="tab"
-							aria-controls="education"
-							aria-selected="false"
-							>Education</a
-						>
-					</li>
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link"
-							id="work-ability-tab"
-							data-bs-toggle="tab"
-							href="#workAbility"
-							type="button"
-							role="tab"
-							aria-controls="ability"
-							aria-selected="false"
-							>Work Eligibility</a
-						>
-					</li>
-					<li class="nav-item" role="sectionInfo">
-						<a
-							class="nav-link"
-							id="#additional-tab"
-							data-bs-toggle="tab"
-							href="#additionalInfo"
-							type="button"
-							role="tab"
-							aria-controls="additional"
-							aria-selected="false"
-							>Additional Information</a
-						>
-					</li>
-				</ul>
+							data-bs-toggle="offcanvas"
+							data-bs-target="#offcanvasNavbar"
+							aria-controls="offcanvasNavbar"
+							aria-label="Toggle navigation">
+							<i class="fas fa-bars"></i>
+						</button>
+						<div
+							class="offcanvas offcanvas-start"
+							tabindex="-1"
+							id="offcanvasNavbar"
+							aria-labelledby="offcanvasNavbarLabel">
+							<div class="offcanvas-header">
+								<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+								<button
+									type="button"
+									class="btn-close text-reset"
+									data-bs-dismiss="offcanvas"
+									aria-label="Close"></button>
+							</div>
+							<div class="offcanvas-body">
+								<!-- Navigation Tabs -->
+								<ul class="nav nav-tabs flex-column">
+									<hr class="dropdown-menu-divider text-light" />
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link active text-primary-bold"
+											id="personal-info-tab"
+											data-bs-toggle="tab"
+											href="#personal-info-section"
+											type="button"
+											role="tab"
+											aria-controls="main"
+											aria-selected="true"
+											>Personal Info</a
+										>
+									</li>
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link text-primary-bold"
+											id="positions-tab"
+											data-bs-toggle="tab"
+											href="#positions-section"
+											type="button"
+											role="tab"
+											aria-controls="main"
+											aria-selected="false"
+											>Positions</a
+										>
+									</li>
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link text-primary-bold"
+											id="work-experiance-tab"
+											data-bs-toggle="tab"
+											href="#work-experience-section"
+											type="button"
+											role="tab"
+											aria-controls="experience"
+											aria-selected="false"
+											>Work Experience</a
+										>
+									</li>
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link text-primary-bold"
+											id="education-tab"
+											data-bs-toggle="tab"
+											href="#education-section"
+											type="button"
+											role="tab"
+											aria-controls="education"
+											aria-selected="false"
+											>Education</a
+										>
+									</li>
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link text-primary-bold"
+											id="work-ability-tab"
+											data-bs-toggle="tab"
+											href="#work-ability-section"
+											type="button"
+											role="tab"
+											aria-controls="ability"
+											aria-selected="false"
+											>Work Eligibility</a
+										>
+									</li>
+									<li class="nav-item" role="sectionInfo">
+										<a
+											class="nav-link text-primary-bold"
+											id="#additional-tab"
+											data-bs-toggle="tab"
+											href="#additional-info-section"
+											type="button"
+											role="tab"
+											aria-controls="additional"
+											aria-selected="false"
+											>Additional Information</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
 			</div>
-
-			<div class="container-fluid tab-content-container p-4" id="personal-info-container" style="max-width: 600px">
-				<section
+			<!-- ****************************************************************Personal Information******************************** -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="personal-info-container"
+				style="max-width: 800px">
+				<div
 					class="tab-pane fade show active"
 					id="personal-info-section"
 					role="tabpanel"
 					aria-labelledby="personal-info">
-					<form>
-						<h1 class="tab-title">Personal Information</h1>
-						<div class="form-row">
-							<div class="form-group col-md-5">
+					<form class="my-2 needs-validation" novalidate>
+						<h1 class="section-title">Personal Information</h1>
+						<div class="form-row my-2">
+							<div class="form-group">
 								<label for="full-name">Full Name</label>
-								<input type="text" class="form-control" id="full-name" placeholder="Enter your full name!" />
+								<input type="text" class="form-control" id="full-name" placeholder="Enter your full name!" required />
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<label for="address">Address</label>
-							<input type="text" class="form-control" id="address" placeholder="1632 Yellowstone Ln" />
+							<input type="address" class="form-control" id="address" placeholder="1632 Yellowstone Ln" required />
 						</div>
-						<div class="form-row">
+						<div class="form-row my-2">
 							<div class="form-group col-md-6">
 								<label for="city">City</label>
-								<input type="text" class="form-control" id="city" />
+								<input type="text" class="form-control" id="city" placeholder="Enter City" required />
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6 my-2">
 								<label for="state">State</label>
-								<select id="state" class="form-control">
-									<option selected>Choose...</option>
-									<option>...</option>
+								<select id="state" class="form-control" required>
+									<option value="" disabled selected>Select a State</option>
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District Of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
 								</select>
 							</div>
-							<div class="form-group col-md-2">
+							<div class="form-group col-md-6 my-2">
 								<label for="zip-code">Zip Code</label>
-								<input type="text" class="form-control" id="zip-code" />
+								<input type="text" class="form-control" id="zip-code" placeholder="Enter Zip Code" required />
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<label for="country">Country</label>
-							<select type="text" class="form-control" id="country" placeholder="Select Country">
+							<select type="text" class="form-control" id="country" placeholder="Select Country" required>
+								<option value="" disabled selected>Select a Country</option>
 								<option value="United States">United States</option>
 								<option value="Canada">Canada</option>
 								<option value="Mexico">Mexico</option>
@@ -162,439 +335,1691 @@
 								<option value="Venezuela">Venezuela</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="phone">Phone</label>
-							<input type="phone" class="form-control" id="phone" placeholder="(800)-888-1234" />
+						<div class="form-group my-2">
+							<label for="phone">Primary Phone</label>
+							<input type="phone" class="form-control" id="phone" placeholder="Enter Phone - (800)-888-1234" required />
 						</div>
-						<div class="form-group">
+						<div class="form-group my-2">
 							<label for="email">Email</label>
-							<input type="email" class="form-control" id="email" placeholder="myname@gmail.com" />
+							<input type="email" class="form-control" id="email" placeholder="name@gmail.com" required />
 						</div>
-						<button type="submit" id="personal-info-section-button" class="btn btn-primary">Continue</button>
+						<button
+							class="btn btn-primary class mt-2 mb-2 btn-continue"
+							data-bs-target="#positions-section"
+							type="button"
+							id="personal-info-section-button">
+							Continue
+						</button>
 					</form>
-				</section>
+				</div>
 			</div>
-			<!-- <div class="container-fluid tab-content-container p-4" id="positions-info-container" style="max-width: 600px"> -->
-			<section class="tab-pane fade" id="positions-section" role="tabpanel" aria-labelledby="positions">
-				<form>
-					<h1 class="h1">Positions Applied For</h1>
-					<h3 class="h3">Please select the position(s) that you are applying for in order of preference.</h3>
-					<p>
-						Asterisks (***) by a job position indicates that little or no experience needed.<br />
-						The letters D.L. indicates the position requires a valid Drivers License.<br />
-						If you desire an Internship, please select Internship as your first choice. <br />
-					</p>
-					<div class="form-row">
-						<div class="form-group col-md-4">
-							<label for="inputJob1">First Choice</label>
-							<select type="text" class="form-control" id="inputJob1">
-								<option selected="selected" value=""></option>
-								<option>Dining Room Server Assistant***</option>
-								<option>Employee Dining Room Crew***</option>
-								<option>Fast Food Crew***</option>
-								<option>Kitchen Crew***</option>
-								<option>Laundry Help***</option>
-								<option>Room Attendant***</option>
-								<option>Activities Sales Agent</option>
-								<option>Administrative Assistant Maintenance</option>
-								<option>Asst. HR Manager</option>
-								<option>Audit Clerk</option>
-								<option>Bar Lead</option>
-								<option>Barista</option>
-								<option>Bartender</option>
-								<option>Bell Porter</option>
-								<option>Boiler Technician (D.L.)</option>
-								<option>Bus Driver/Guide (D.L.)</option>
-								<option>Bus Service Person (D.L.)</option>
-								<option>Cafeteria Management</option>
-								<option>Camper Services Attendants</option>
-								<option>Campground Attendant (D.L.)</option>
-								<option>Campground Management</option>
-								<option>Carpenter (D.L.)</option>
-								<option>Carpet Cleaning Technician (D.L.)</option>
-								<option>Chef</option>
-								<option>Cocktail Server</option>
-								<option>Cook</option>
-								<option>Cookout Entertainer</option>
-								<option>Dining Room Host</option>
-								<option>Dining Room Host Lead</option>
-								<option>Dining Room Management</option>
-								<option>Dining Room Server</option>
-								<option>Distribution Center Associate</option>
-								<option>Distribution Center Truck Driver (D.L.)</option>
-								<option>Distribution Lead</option>
-								<option>Dock Help (D.L.)</option>
-								<option>Dorm Custodian</option>
-								<option>Electrician (D.L.)</option>
-								<option>Employee Dining Room Management</option>
-								<option>Employee Pub Crew/Lead</option>
-								<option>Fast Food Management</option>
-								<option>Finish Floor Supervisor</option>
-								<option>Fire Systems Technician (D.L.)</option>
-								<option>Floor Cleaning Technician (D.L.)</option>
-								<option>Food and Beverage Management</option>
-								<option>Food and Beverage Office Assistant</option>
-								<option>Front Office Management</option>
-								<option>Furniture Mover (D.L.)</option>
-								<option>General Accounting Office</option>
-								<option>General Maintenance (D.L.)</option>
-								<option>Guest Services Agent</option>
-								<option>Guest Services Agent (Campground)</option>
-								<option>Heavy Equipment Operator (D.L.)</option>
-								<option>Housekeeping Management</option>
-								<option>Housekeeping Room Inspector</option>
-								<option>Housekeeping Trainer</option>
-								<option>Housekeeping Office Assistant</option>
-								<option>Housing Manager</option>
-								<option>Internship</option>
-								<option>Kitchen Technician (D.L.)</option>
-								<option>Laundry Technician (D.L.)</option>
-								<option>Laundry Truck Driver (D.L.)</option>
-								<option>Linen Truck Driver (D.L.)</option>
-								<option>Location Controller/Assistant</option>
-								<option>Locksmith (D.L.)</option>
-								<option>Marina Fishing Guide (D.L.)</option>
-								<option>Marina Manager (D.L.)</option>
-								<option>Night Auditor</option>
-								<option>Night Guest Services Agent</option>
-								<option>Painter (D.L.)</option>
-								<option>Pantry Supervisor</option>
-								<option>Personnel Management</option>
-								<option>Pianist</option>
-								<option>Plumber (D.L.)</option>
-								<option>Porter</option>
-								<option>Preservation Maintenance Crew Craftsperson</option>
-								<option>Recreation Coordinator (D.L.)</option>
-								<option>Recreation Supervisor (D.L.)</option>
-								<option>Recycling Technician (D.L.)</option>
-								<option>Reservations Sales Agent</option>
-								<option>Residence Coordinator</option>
-								<option>Retail Management</option>
-								<option>Retail Sales Associate</option>
-								<option>R&amp;M Staff Assistant</option>
-								<option>Scenic Cruise Operator (D.L.)</option>
-								<option>Seamstress</option>
-								<option>Security Guard And Location Safety (D.L.)</option>
-								<option>Senior Guest Services Agent (Campground)</option>
-								<option>Snack Shop / Deli Supervisor</option>
-								<option>Sous Chef</option>
-								<option>Steward</option>
-								<option>Storekeeper</option>
-								<option>Tour Guide (D.L.)</option>
-								<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
-								<option>Traveling Night Auditor</option>
-								<option>Vending Clerk</option>
-								<option>Vending Driver (D.L.)</option>
-								<option>Vending Service Technician</option>
-								<option>Warehouse Manager</option>
-								<option>Warehouse Help</option>
-								<option>Warehouse Driver (OFI)</option>
-								<option>Wash Deck Supervisor</option>
-								<option>Wash Deck Lead</option>
-								<option>Wrangler/Driver</option>
-							</select>
-						</div>
-						<div class="form-group col-md-4">
-							<label for="inputJob2">Second Choice</label>
-							<select type="text" class="form-control" id="inputJob2">
-								<option selected="selected" value=""></option>
-								<option>Dining Room Server Assistant***</option>
-								<option>Employee Dining Room Crew***</option>
-								<option>Fast Food Crew***</option>
-								<option>Kitchen Crew***</option>
-								<option>Laundry Help***</option>
-								<option>Room Attendant***</option>
-								<option>Activities Sales Agent</option>
-								<option>Administrative Assistant Maintenance</option>
-								<option>Asst. HR Manager</option>
-								<option>Audit Clerk</option>
-								<option>Bar Lead</option>
-								<option>Barista</option>
-								<option>Bartender</option>
-								<option>Bell Porter</option>
-								<option>Boiler Technician (D.L.)</option>
-								<option>Bus Driver/Guide (D.L.)</option>
-								<option>Bus Service Person (D.L.)</option>
-								<option>Cafeteria Management</option>
-								<option>Camper Services Attendants</option>
-								<option>Campground Attendant (D.L.)</option>
-								<option>Campground Management</option>
-								<option>Carpenter (D.L.)</option>
-								<option>Carpet Cleaning Technician (D.L.)</option>
-								<option>Chef</option>
-								<option>Cocktail Server</option>
-								<option>Cook</option>
-								<option>Cookout Entertainer</option>
-								<option>Dining Room Host</option>
-								<option>Dining Room Host Lead</option>
-								<option>Dining Room Management</option>
-								<option>Dining Room Server</option>
-								<option>Distribution Center Associate</option>
-								<option>Distribution Center Truck Driver (D.L.)</option>
-								<option>Distribution Lead</option>
-								<option>Dock Help (D.L.)</option>
-								<option>Dorm Custodian</option>
-								<option>Electrician (D.L.)</option>
-								<option>Employee Dining Room Management</option>
-								<option>Employee Pub Crew/Lead</option>
-								<option>Fast Food Management</option>
-								<option>Finish Floor Supervisor</option>
-								<option>Fire Systems Technician (D.L.)</option>
-								<option>Floor Cleaning Technician (D.L.)</option>
-								<option>Food and Beverage Management</option>
-								<option>Food and Beverage Office Assistant</option>
-								<option>Front Office Management</option>
-								<option>Furniture Mover (D.L.)</option>
-								<option>General Accounting Office</option>
-								<option>General Maintenance (D.L.)</option>
-								<option>Guest Services Agent</option>
-								<option>Guest Services Agent (Campground)</option>
-								<option>Heavy Equipment Operator (D.L.)</option>
-								<option>Housekeeping Management</option>
-								<option>Housekeeping Room Inspector</option>
-								<option>Housekeeping Trainer</option>
-								<option>Housekeeping Office Assistant</option>
-								<option>Housing Manager</option>
-								<option>Internship</option>
-								<option>Kitchen Technician (D.L.)</option>
-								<option>Laundry Technician (D.L.)</option>
-								<option>Laundry Truck Driver (D.L.)</option>
-								<option>Linen Truck Driver (D.L.)</option>
-								<option>Location Controller/Assistant</option>
-								<option>Locksmith (D.L.)</option>
-								<option>Marina Fishing Guide (D.L.)</option>
-								<option>Marina Manager (D.L.)</option>
-								<option>Night Auditor</option>
-								<option>Night Guest Services Agent</option>
-								<option>Painter (D.L.)</option>
-								<option>Pantry Supervisor</option>
-								<option>Personnel Management</option>
-								<option>Pianist</option>
-								<option>Plumber (D.L.)</option>
-								<option>Porter</option>
-								<option>Preservation Maintenance Crew Craftsperson</option>
-								<option>Recreation Coordinator (D.L.)</option>
-								<option>Recreation Supervisor (D.L.)</option>
-								<option>Recycling Technician (D.L.)</option>
-								<option>Reservations Sales Agent</option>
-								<option>Residence Coordinator</option>
-								<option>Retail Management</option>
-								<option>Retail Sales Associate</option>
-								<option>R&amp;M Staff Assistant</option>
-								<option>Scenic Cruise Operator (D.L.)</option>
-								<option>Seamstress</option>
-								<option>Security Guard And Location Safety (D.L.)</option>
-								<option>Senior Guest Services Agent (Campground)</option>
-								<option>Snack Shop / Deli Supervisor</option>
-								<option>Sous Chef</option>
-								<option>Steward</option>
-								<option>Storekeeper</option>
-								<option>Tour Guide (D.L.)</option>
-								<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
-								<option>Traveling Night Auditor</option>
-								<option>Vending Clerk</option>
-								<option>Vending Driver (D.L.)</option>
-								<option>Vending Service Technician</option>
-								<option>Warehouse Manager</option>
-								<option>Warehouse Help</option>
-								<option>Warehouse Driver (OFI)</option>
-								<option>Wash Deck Supervisor</option>
-								<option>Wash Deck Lead</option>
-								<option>Wrangler/Driver</option>
-							</select>
-						</div>
-						<div class="form-group col-md-4">
-							<label for="inputJob3">Third Choice</label>
-							<select type="text" class="form-control" id="inputJob3">
-								<option selected="selected" value=""></option>
-								<option>Dining Room Server Assistant***</option>
-								<option>Employee Dining Room Crew***</option>
-								<option>Fast Food Crew***</option>
-								<option>Kitchen Crew***</option>
-								<option>Laundry Help***</option>
-								<option>Room Attendant***</option>
-								<option>Activities Sales Agent</option>
-								<option>Administrative Assistant Maintenance</option>
-								<option>Asst. HR Manager</option>
-								<option>Audit Clerk</option>
-								<option>Bar Lead</option>
-								<option>Barista</option>
-								<option>Bartender</option>
-								<option>Bell Porter</option>
-								<option>Boiler Technician (D.L.)</option>
-								<option>Bus Driver/Guide (D.L.)</option>
-								<option>Bus Service Person (D.L.)</option>
-								<option>Cafeteria Management</option>
-								<option>Camper Services Attendants</option>
-								<option>Campground Attendant (D.L.)</option>
-								<option>Campground Management</option>
-								<option>Carpenter (D.L.)</option>
-								<option>Carpet Cleaning Technician (D.L.)</option>
-								<option>Chef</option>
-								<option>Cocktail Server</option>
-								<option>Cook</option>
-								<option>Cookout Entertainer</option>
-								<option>Dining Room Host</option>
-								<option>Dining Room Host Lead</option>
-								<option>Dining Room Management</option>
-								<option>Dining Room Server</option>
-								<option>Distribution Center Associate</option>
-								<option>Distribution Center Truck Driver (D.L.)</option>
-								<option>Distribution Lead</option>
-								<option>Dock Help (D.L.)</option>
-								<option>Dorm Custodian</option>
-								<option>Electrician (D.L.)</option>
-								<option>Employee Dining Room Management</option>
-								<option>Employee Pub Crew/Lead</option>
-								<option>Fast Food Management</option>
-								<option>Finish Floor Supervisor</option>
-								<option>Fire Systems Technician (D.L.)</option>
-								<option>Floor Cleaning Technician (D.L.)</option>
-								<option>Food and Beverage Management</option>
-								<option>Food and Beverage Office Assistant</option>
-								<option>Front Office Management</option>
-								<option>Furniture Mover (D.L.)</option>
-								<option>General Accounting Office</option>
-								<option>General Maintenance (D.L.)</option>
-								<option>Guest Services Agent</option>
-								<option>Guest Services Agent (Campground)</option>
-								<option>Heavy Equipment Operator (D.L.)</option>
-								<option>Housekeeping Management</option>
-								<option>Housekeeping Room Inspector</option>
-								<option>Housekeeping Trainer</option>
-								<option>Housekeeping Office Assistant</option>
-								<option>Housing Manager</option>
-								<option>Internship</option>
-								<option>Kitchen Technician (D.L.)</option>
-								<option>Laundry Technician (D.L.)</option>
-								<option>Laundry Truck Driver (D.L.)</option>
-								<option>Linen Truck Driver (D.L.)</option>
-								<option>Location Controller/Assistant</option>
-								<option>Locksmith (D.L.)</option>
-								<option>Marina Fishing Guide (D.L.)</option>
-								<option>Marina Manager (D.L.)</option>
-								<option>Night Auditor</option>
-								<option>Night Guest Services Agent</option>
-								<option>Painter (D.L.)</option>
-								<option>Pantry Supervisor</option>
-								<option>Personnel Management</option>
-								<option>Pianist</option>
-								<option>Plumber (D.L.)</option>
-								<option>Porter</option>
-								<option>Preservation Maintenance Crew Craftsperson</option>
-								<option>Recreation Coordinator (D.L.)</option>
-								<option>Recreation Supervisor (D.L.)</option>
-								<option>Recycling Technician (D.L.)</option>
-								<option>Reservations Sales Agent</option>
-								<option>Residence Coordinator</option>
-								<option>Retail Management</option>
-								<option>Retail Sales Associate</option>
-								<option>R&amp;M Staff Assistant</option>
-								<option>Scenic Cruise Operator (D.L.)</option>
-								<option>Seamstress</option>
-								<option>Security Guard And Location Safety (D.L.)</option>
-								<option>Senior Guest Services Agent (Campground)</option>
-								<option>Snack Shop / Deli Supervisor</option>
-								<option>Sous Chef</option>
-								<option>Steward</option>
-								<option>Storekeeper</option>
-								<option>Tour Guide (D.L.)</option>
-								<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
-								<option>Traveling Night Auditor</option>
-								<option>Vending Clerk</option>
-								<option>Vending Driver (D.L.)</option>
-								<option>Vending Service Technician</option>
-								<option>Warehouse Manager</option>
-								<option>Warehouse Help</option>
-								<option>Warehouse Driver (OFI)</option>
-								<option>Wash Deck Supervisor</option>
-								<option>Wash Deck Lead</option>
-								<option>Wrangler/Driver</option>
-							</select>
-						</div>
-					</div>
 
-					<div class="form-group">
-						<label for="inputOtherPosition"
-							>If you'd like to apply for a different seasonal position or year round/long season position --<br />
-							please enter the name of the job into the following box.</label
-						>
-						<input type="text" class="form-control" id="inputOtherPosition" placeholder="---" />
-					</div>
-					<div class="form-row">
-						<div class="col-md-4">
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="inputSeasonal" />
-								<label class="form-check-label" for="inputSeasonal"> Seasonal Position </label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="inputYearRound" />
-								<label class="form-check-label" for="inputYearRound"> Year Round Position </label>
+			<!-- ****************************************************Positions section************************************************ -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="positions-info-container"
+				style="max-width: 600px">
+				<div class="tab-pane fade" id="positions-section" role="tabpanel" aria-labelledby="positions">
+					<form class="my-2 needs-validation" novalidate>
+						<h1 class="section-title text-align-center">POSITIONS APPLIED FOR</h1>
+						<h3 class="section-title-sub">
+							Please select the position(s) that you are applying for in order of preference.
+						</h3>
+						<p>
+							Asterisks (***) by a job position indicates that little or no experience needed.<br />
+							The letters D.L. indicates the position requires a valid Drivers License.<br />
+							If you desire an Internship, please select Internship as your first choice. <br />
+						</p>
+						<p class="section-text">Do You Have A Valid and Current Driver's License?</p>
+						<div class="form-row my-2">
+							<div class="col-md-4" required>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+									<label class="form-check-label" for="flexRadioDefault1"> Yes </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+									<label class="form-check-label" for="flexRadioDefault2"> No </label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<h3 class="text-warning d-inline-block mb-5 mt-5">Required Entry</h3>
-					<p class="default-text">Please enter dates as mm/dd/yyyy (example: 04/15/2010)</p>
-					<div class="form-group">
+						<div class="form-row my-2">
+							<div class="form-group col-lg-12 col-md-6 my-2">
+								<label for="job-option-1">First Choice</label>
+								<select type="text" class="form-control" id="job-option-1" required>
+									<option selected="selected" value=""></option>
+									<option>Dining Room Server Assistant***</option>
+									<option>Employee Dining Room Crew***</option>
+									<option>Fast Food Crew***</option>
+									<option>Kitchen Crew***</option>
+									<option>Laundry Help***</option>
+									<option>Room Attendant***</option>
+									<option>Activities Sales Agent</option>
+									<option>Administrative Assistant Maintenance</option>
+									<option>Asst. HR Manager</option>
+									<option>Audit Clerk</option>
+									<option>Bar Lead</option>
+									<option>Barista</option>
+									<option>Bartender</option>
+									<option>Bell Porter</option>
+									<option>Boiler Technician (D.L.)</option>
+									<option>Bus Driver/Guide (D.L.)</option>
+									<option>Bus Service Person (D.L.)</option>
+									<option>Cafeteria Management</option>
+									<option>Camper Services Attendants</option>
+									<option>Campground Attendant (D.L.)</option>
+									<option>Campground Management</option>
+									<option>Carpenter (D.L.)</option>
+									<option>Carpet Cleaning Technician (D.L.)</option>
+									<option>Chef</option>
+									<option>Cocktail Server</option>
+									<option>Cook</option>
+									<option>Cookout Entertainer</option>
+									<option>Dining Room Host</option>
+									<option>Dining Room Host Lead</option>
+									<option>Dining Room Management</option>
+									<option>Dining Room Server</option>
+									<option>Distribution Center Associate</option>
+									<option>Distribution Center Truck Driver (D.L.)</option>
+									<option>Distribution Lead</option>
+									<option>Dock Help (D.L.)</option>
+									<option>Dorm Custodian</option>
+									<option>Electrician (D.L.)</option>
+									<option>Employee Dining Room Management</option>
+									<option>Employee Pub Crew/Lead</option>
+									<option>Fast Food Management</option>
+									<option>Finish Floor Supervisor</option>
+									<option>Fire Systems Technician (D.L.)</option>
+									<option>Floor Cleaning Technician (D.L.)</option>
+									<option>Food and Beverage Management</option>
+									<option>Food and Beverage Office Assistant</option>
+									<option>Front Office Management</option>
+									<option>Furniture Mover (D.L.)</option>
+									<option>General Accounting Office</option>
+									<option>General Maintenance (D.L.)</option>
+									<option>Guest Services Agent</option>
+									<option>Guest Services Agent (Campground)</option>
+									<option>Heavy Equipment Operator (D.L.)</option>
+									<option>Housekeeping Management</option>
+									<option>Housekeeping Room Inspector</option>
+									<option>Housekeeping Trainer</option>
+									<option>Housekeeping Office Assistant</option>
+									<option>Housing Manager</option>
+									<option>Internship</option>
+									<option>Kitchen Technician (D.L.)</option>
+									<option>Laundry Technician (D.L.)</option>
+									<option>Laundry Truck Driver (D.L.)</option>
+									<option>Linen Truck Driver (D.L.)</option>
+									<option>Location Controller/Assistant</option>
+									<option>Locksmith (D.L.)</option>
+									<option>Marina Fishing Guide (D.L.)</option>
+									<option>Marina Manager (D.L.)</option>
+									<option>Night Auditor</option>
+									<option>Night Guest Services Agent</option>
+									<option>Painter (D.L.)</option>
+									<option>Pantry Supervisor</option>
+									<option>Personnel Management</option>
+									<option>Pianist</option>
+									<option>Plumber (D.L.)</option>
+									<option>Porter</option>
+									<option>Preservation Maintenance Crew Craftsperson</option>
+									<option>Recreation Coordinator (D.L.)</option>
+									<option>Recreation Supervisor (D.L.)</option>
+									<option>Recycling Technician (D.L.)</option>
+									<option>Reservations Sales Agent</option>
+									<option>Residence Coordinator</option>
+									<option>Retail Management</option>
+									<option>Retail Sales Associate</option>
+									<option>R&amp;M Staff Assistant</option>
+									<option>Scenic Cruise Operator (D.L.)</option>
+									<option>Seamstress</option>
+									<option>Security Guard And Location Safety (D.L.)</option>
+									<option>Senior Guest Services Agent (Campground)</option>
+									<option>Snack Shop / Deli Supervisor</option>
+									<option>Sous Chef</option>
+									<option>Steward</option>
+									<option>Storekeeper</option>
+									<option>Tour Guide (D.L.)</option>
+									<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
+									<option>Traveling Night Auditor</option>
+									<option>Vending Clerk</option>
+									<option>Vending Driver (D.L.)</option>
+									<option>Vending Service Technician</option>
+									<option>Warehouse Manager</option>
+									<option>Warehouse Help</option>
+									<option>Warehouse Driver (OFI)</option>
+									<option>Wash Deck Supervisor</option>
+									<option>Wash Deck Lead</option>
+									<option>Wrangler/Driver</option>
+								</select>
+							</div>
+							<div class="form-group col-lg-12 col-md-6 my-2">
+								<label for="job-option-2">Second Choice</label>
+								<select type="text" class="form-control" id="job-option-2">
+									<option selected="selected" value=""></option>
+									<option>Dining Room Server Assistant***</option>
+									<option>Employee Dining Room Crew***</option>
+									<option>Fast Food Crew***</option>
+									<option>Kitchen Crew***</option>
+									<option>Laundry Help***</option>
+									<option>Room Attendant***</option>
+									<option>Activities Sales Agent</option>
+									<option>Administrative Assistant Maintenance</option>
+									<option>Asst. HR Manager</option>
+									<option>Audit Clerk</option>
+									<option>Bar Lead</option>
+									<option>Barista</option>
+									<option>Bartender</option>
+									<option>Bell Porter</option>
+									<option>Boiler Technician (D.L.)</option>
+									<option>Bus Driver/Guide (D.L.)</option>
+									<option>Bus Service Person (D.L.)</option>
+									<option>Cafeteria Management</option>
+									<option>Camper Services Attendants</option>
+									<option>Campground Attendant (D.L.)</option>
+									<option>Campground Management</option>
+									<option>Carpenter (D.L.)</option>
+									<option>Carpet Cleaning Technician (D.L.)</option>
+									<option>Chef</option>
+									<option>Cocktail Server</option>
+									<option>Cook</option>
+									<option>Cookout Entertainer</option>
+									<option>Dining Room Host</option>
+									<option>Dining Room Host Lead</option>
+									<option>Dining Room Management</option>
+									<option>Dining Room Server</option>
+									<option>Distribution Center Associate</option>
+									<option>Distribution Center Truck Driver (D.L.)</option>
+									<option>Distribution Lead</option>
+									<option>Dock Help (D.L.)</option>
+									<option>Dorm Custodian</option>
+									<option>Electrician (D.L.)</option>
+									<option>Employee Dining Room Management</option>
+									<option>Employee Pub Crew/Lead</option>
+									<option>Fast Food Management</option>
+									<option>Finish Floor Supervisor</option>
+									<option>Fire Systems Technician (D.L.)</option>
+									<option>Floor Cleaning Technician (D.L.)</option>
+									<option>Food and Beverage Management</option>
+									<option>Food and Beverage Office Assistant</option>
+									<option>Front Office Management</option>
+									<option>Furniture Mover (D.L.)</option>
+									<option>General Accounting Office</option>
+									<option>General Maintenance (D.L.)</option>
+									<option>Guest Services Agent</option>
+									<option>Guest Services Agent (Campground)</option>
+									<option>Heavy Equipment Operator (D.L.)</option>
+									<option>Housekeeping Management</option>
+									<option>Housekeeping Room Inspector</option>
+									<option>Housekeeping Trainer</option>
+									<option>Housekeeping Office Assistant</option>
+									<option>Housing Manager</option>
+									<option>Internship</option>
+									<option>Kitchen Technician (D.L.)</option>
+									<option>Laundry Technician (D.L.)</option>
+									<option>Laundry Truck Driver (D.L.)</option>
+									<option>Linen Truck Driver (D.L.)</option>
+									<option>Location Controller/Assistant</option>
+									<option>Locksmith (D.L.)</option>
+									<option>Marina Fishing Guide (D.L.)</option>
+									<option>Marina Manager (D.L.)</option>
+									<option>Night Auditor</option>
+									<option>Night Guest Services Agent</option>
+									<option>Painter (D.L.)</option>
+									<option>Pantry Supervisor</option>
+									<option>Personnel Management</option>
+									<option>Pianist</option>
+									<option>Plumber (D.L.)</option>
+									<option>Porter</option>
+									<option>Preservation Maintenance Crew Craftsperson</option>
+									<option>Recreation Coordinator (D.L.)</option>
+									<option>Recreation Supervisor (D.L.)</option>
+									<option>Recycling Technician (D.L.)</option>
+									<option>Reservations Sales Agent</option>
+									<option>Residence Coordinator</option>
+									<option>Retail Management</option>
+									<option>Retail Sales Associate</option>
+									<option>R&amp;M Staff Assistant</option>
+									<option>Scenic Cruise Operator (D.L.)</option>
+									<option>Seamstress</option>
+									<option>Security Guard And Location Safety (D.L.)</option>
+									<option>Senior Guest Services Agent (Campground)</option>
+									<option>Snack Shop / Deli Supervisor</option>
+									<option>Sous Chef</option>
+									<option>Steward</option>
+									<option>Storekeeper</option>
+									<option>Tour Guide (D.L.)</option>
+									<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
+									<option>Traveling Night Auditor</option>
+									<option>Vending Clerk</option>
+									<option>Vending Driver (D.L.)</option>
+									<option>Vending Service Technician</option>
+									<option>Warehouse Manager</option>
+									<option>Warehouse Help</option>
+									<option>Warehouse Driver (OFI)</option>
+									<option>Wash Deck Supervisor</option>
+									<option>Wash Deck Lead</option>
+									<option>Wrangler/Driver</option>
+								</select>
+							</div>
+							<div class="form-group col-lg-12 col-md-6 my-2">
+								<label for="job-option-3">Third Choice</label>
+								<select type="text" class="form-control" id="job-option-3">
+									<option selected="selected" value=""></option>
+									<option>Dining Room Server Assistant***</option>
+									<option>Employee Dining Room Crew***</option>
+									<option>Fast Food Crew***</option>
+									<option>Kitchen Crew***</option>
+									<option>Laundry Help***</option>
+									<option>Room Attendant***</option>
+									<option>Activities Sales Agent</option>
+									<option>Administrative Assistant Maintenance</option>
+									<option>Asst. HR Manager</option>
+									<option>Audit Clerk</option>
+									<option>Bar Lead</option>
+									<option>Barista</option>
+									<option>Bartender</option>
+									<option>Bell Porter</option>
+									<option>Boiler Technician (D.L.)</option>
+									<option>Bus Driver/Guide (D.L.)</option>
+									<option>Bus Service Person (D.L.)</option>
+									<option>Cafeteria Management</option>
+									<option>Camper Services Attendants</option>
+									<option>Campground Attendant (D.L.)</option>
+									<option>Campground Management</option>
+									<option>Carpenter (D.L.)</option>
+									<option>Carpet Cleaning Technician (D.L.)</option>
+									<option>Chef</option>
+									<option>Cocktail Server</option>
+									<option>Cook</option>
+									<option>Cookout Entertainer</option>
+									<option>Dining Room Host</option>
+									<option>Dining Room Host Lead</option>
+									<option>Dining Room Management</option>
+									<option>Dining Room Server</option>
+									<option>Distribution Center Associate</option>
+									<option>Distribution Center Truck Driver (D.L.)</option>
+									<option>Distribution Lead</option>
+									<option>Dock Help (D.L.)</option>
+									<option>Dorm Custodian</option>
+									<option>Electrician (D.L.)</option>
+									<option>Employee Dining Room Management</option>
+									<option>Employee Pub Crew/Lead</option>
+									<option>Fast Food Management</option>
+									<option>Finish Floor Supervisor</option>
+									<option>Fire Systems Technician (D.L.)</option>
+									<option>Floor Cleaning Technician (D.L.)</option>
+									<option>Food and Beverage Management</option>
+									<option>Food and Beverage Office Assistant</option>
+									<option>Front Office Management</option>
+									<option>Furniture Mover (D.L.)</option>
+									<option>General Accounting Office</option>
+									<option>General Maintenance (D.L.)</option>
+									<option>Guest Services Agent</option>
+									<option>Guest Services Agent (Campground)</option>
+									<option>Heavy Equipment Operator (D.L.)</option>
+									<option>Housekeeping Management</option>
+									<option>Housekeeping Room Inspector</option>
+									<option>Housekeeping Trainer</option>
+									<option>Housekeeping Office Assistant</option>
+									<option>Housing Manager</option>
+									<option>Internship</option>
+									<option>Kitchen Technician (D.L.)</option>
+									<option>Laundry Technician (D.L.)</option>
+									<option>Laundry Truck Driver (D.L.)</option>
+									<option>Linen Truck Driver (D.L.)</option>
+									<option>Location Controller/Assistant</option>
+									<option>Locksmith (D.L.)</option>
+									<option>Marina Fishing Guide (D.L.)</option>
+									<option>Marina Manager (D.L.)</option>
+									<option>Night Auditor</option>
+									<option>Night Guest Services Agent</option>
+									<option>Painter (D.L.)</option>
+									<option>Pantry Supervisor</option>
+									<option>Personnel Management</option>
+									<option>Pianist</option>
+									<option>Plumber (D.L.)</option>
+									<option>Porter</option>
+									<option>Preservation Maintenance Crew Craftsperson</option>
+									<option>Recreation Coordinator (D.L.)</option>
+									<option>Recreation Supervisor (D.L.)</option>
+									<option>Recycling Technician (D.L.)</option>
+									<option>Reservations Sales Agent</option>
+									<option>Residence Coordinator</option>
+									<option>Retail Management</option>
+									<option>Retail Sales Associate</option>
+									<option>R&amp;M Staff Assistant</option>
+									<option>Scenic Cruise Operator (D.L.)</option>
+									<option>Seamstress</option>
+									<option>Security Guard And Location Safety (D.L.)</option>
+									<option>Senior Guest Services Agent (Campground)</option>
+									<option>Snack Shop / Deli Supervisor</option>
+									<option>Sous Chef</option>
+									<option>Steward</option>
+									<option>Storekeeper</option>
+									<option>Tour Guide (D.L.)</option>
+									<option>Touring Car Driver- Interpretive Guide Non CDL (D.L.)</option>
+									<option>Traveling Night Auditor</option>
+									<option>Vending Clerk</option>
+									<option>Vending Driver (D.L.)</option>
+									<option>Vending Service Technician</option>
+									<option>Warehouse Manager</option>
+									<option>Warehouse Help</option>
+									<option>Warehouse Driver (OFI)</option>
+									<option>Wash Deck Supervisor</option>
+									<option>Wash Deck Lead</option>
+									<option>Wrangler/Driver</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="alt-position"
+								>If you'd like to apply for a different seasonal position or year round/long season position --<br />
+								please enter the name of the job into the following box.</label
+							>
+							<input class="form-control mt-2" type="text" id="alt-position" placeholder="Enter Position Desired" />
+						</div>
 						<div class="form-row">
-							<div class="form-group col-md-3">
-								<label for="inputStartDate">Start Date</label>
-								<input type="datetime-local" class="form-control" id="inputStartDate" />
-							</div>
-							<div class="form-group col-md-3">
-								<label for="inputEndDate">End Date</label>
-								<input type="datetime-local" class="form-control" id="inputEndDate" />
-							</div>
-						</div>
-					</div>
-					<h3 class="text-warning d-inline-block mb-5 mt-5">Required Entry</h3>
-					<p class="default-text">
-						Would you accept a Server Assistant, Kitchen Crew, Cafeteria, Laundry, Food Service Attendant or Room
-						Attendant position if those applied for are unavailable?
-					</p>
-					<div class="form-row">
-						<div class="col-md-4">
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="inputOtherYes" />
-								<label class="form-check-label" for="inputOtherYes"> Yes </label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="inputOtherNo" />
-								<label class="form-check-label" for="inputOtherNo"> No </label>
+							<div class="col-md-4 mt-2">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+									<label class="form-check-label" for="flexRadioDefault3"> Seasonal Position </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" />
+									<label class="form-check-label" for="flexRadioDefault4"> Year Round Position </label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-md-4">
-							<label for="inputHear">How Did You Hear About Us?</label>
-							<select type="text" class="form-control" id="inputHear">
-								<option selected="selected" value="Y5100">You are a former YNP Employee</option>
-								<option value="Y5101">Referred by current/former Emp</option>
-								<option value="Y5111">Referred by friend or family</option>
-								<option value="Y5122">Visited Yellowstone</option>
-								<option value="Coolworks">Coolworks</option>
-								<option value="Y5195">Other Seasonal Employer</option>
-								<option value="Y5133">College Career Office Poster</option>
-								<option value="UNIV/CC">University Online Job Bank</option>
-								<option value="Y5302">Christ Ministry/Campus Crusade</option>
-								<option value="Recruiter">Spoke with a Recruiter</option>
-								<option value="Y5177">Job Srvc/Job Services Poster</option>
-								<option value="Y5102">Social Networking Site</option>
-								<option value="Y5502">Print Media Directed @ Seniors</option>
-								<option value="Y5188">Not Listed</option>
+
+						<p class="section-text">Please enter dates as mm/dd/yyyy (04/15/2010)</p>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="form-group mb-2">
+									<label for="input-today-date">Today's Date</label>
+									<input type="datetime-local" class="form-control" id="input-today-date" required />
+								</div>
+								<div class="form-group mb-2">
+									<label for="input-start-date">Start Date</label>
+									<input type="datetime-local" class="form-control" id="input-start-date" required />
+								</div>
+								<div class="form-group">
+									<label for="input-end-date">End Date</label>
+									<input type="datetime-local" class="form-control" id="input-end-date" required />
+								</div>
+							</div>
+						</div>
+
+						<button
+							class="btn btn-primary btn-continue class mt-2 mb-2"
+							id="positions-info-section-button"
+							type="button"
+							data-bs-target="#work-experience-section">
+							Continue
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- *************************************************Work History******************************************* -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="experiance-info-container"
+				style="max-width: 600px">
+				<div class="tab-pane fade" id="work-experience-section" role="tabpanel" aria-labelledby="experiance">
+					<form class="needs-validation" novalidate>
+						<h1 class="tab-title">WORK EXPERIENCE</h1>
+
+						<div class="employer1 info-section mt-5 my-auto">
+							<div class="form-row d-flex d-inline-block justify-content-center">
+								<h4 class="tab-title-sub">Employer #1</h4>
+								<h5 class="ms-2 mt-1">- Start with most recent position.</h5>
+								<hr class="line" />
+							</div>
+
+							<div class="form-row">
+								<div class="form-group">
+									<label for="inputEmployerName" aria-label="first-employer-name">Employer Name</label>
+									<input type="text" class="form-control" id="inputEmployerName" placeholder="Employer Name" required />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="first-employer-address" aria-label="first-employer-address"
+									>Street Address or PO Box Number</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="first-employer-address"
+									placeholder="1632 Yellowstone Ln"
+									required />
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col-md-6">
+									<label for="first-employer-city" aria-label="first-employer-city">City</label>
+									<input type="text" class="form-control" id="first-employer-city" required />
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="employer-state-1" aria-label="first-employer-state">State</label>
+									<select id="employer-state-1" class="form-control" required>
+										<option value="" disabled selected>Select a State</option>
+										<option value="AL">Alabama</option>
+										<option value="AK">Alaska</option>
+										<option value="AZ">Arizona</option>
+										<option value="AR">Arkansas</option>
+										<option value="CA">California</option>
+										<option value="CO">Colorado</option>
+										<option value="CT">Connecticut</option>
+										<option value="DE">Delaware</option>
+										<option value="DC">District Of Columbia</option>
+										<option value="FL">Florida</option>
+										<option value="GA">Georgia</option>
+										<option value="HI">Hawaii</option>
+										<option value="ID">Idaho</option>
+										<option value="IL">Illinois</option>
+										<option value="IN">Indiana</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+										<option value="LA">Louisiana</option>
+										<option value="ME">Maine</option>
+										<option value="MD">Maryland</option>
+										<option value="MA">Massachusetts</option>
+										<option value="MI">Michigan</option>
+										<option value="MN">Minnesota</option>
+										<option value="MS">Mississippi</option>
+										<option value="MO">Missouri</option>
+										<option value="MT">Montana</option>
+										<option value="NE">Nebraska</option>
+										<option value="NV">Nevada</option>
+										<option value="NH">New Hampshire</option>
+										<option value="NJ">New Jersey</option>
+										<option value="NM">New Mexico</option>
+										<option value="NY">New York</option>
+										<option value="NC">North Carolina</option>
+										<option value="ND">North Dakota</option>
+										<option value="OH">Ohio</option>
+										<option value="OK">Oklahoma</option>
+										<option value="OR">Oregon</option>
+										<option value="PA">Pennsylvania</option>
+										<option value="RI">Rhode Island</option>
+										<option value="SC">South Carolina</option>
+										<option value="SD">South Dakota</option>
+										<option value="TN">Tennessee</option>
+										<option value="TX">Texas</option>
+										<option value="UT">Utah</option>
+										<option value="VT">Vermont</option>
+										<option value="VA">Virginia</option>
+										<option value="WA">Washington</option>
+										<option value="WV">West Virginia</option>
+										<option value="WI">Wisconsin</option>
+										<option value="WY">Wyoming</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="first-employer-country" aria-label="first-employer-country">Country</label>
+									<select
+										type="text"
+										class="form-control"
+										id="first-employer-country"
+										placeholder="Select Country"
+										required>
+										<option value="" disabled selected>Select a Country</option>
+										<option value="United States">United States</option>
+										<option value="Canada">Canada</option>
+										<option value="Mexico">Mexico</option>
+										<option value="United Kingdom">United Kingdom</option>
+										<option value="Australia">Australia</option>
+										<option value="New Zealand">New Zealand</option>
+										<option value="China">China</option>
+										<option value="Japan">Japan</option>
+										<option value="India">India</option>
+										<option value="France">France</option>
+										<option value="Germany">Germany</option>
+										<option value="Italy">Italy</option>
+										<option value="Spain">Spain</option>
+										<option value="Russia">Russia</option>
+										<option value="South Korea">South Korea</option>
+										<option value="South Africa">South Africa</option>
+										<option value="South America">South America</option>
+										<option value="Norway">Norway</option>
+										<option value="Poland">Poland</option>
+										<option value="Portugal">Portugal</option>
+										<option value="Brazil">Brazil</option>
+										<option value="Argentina">Argentina</option>
+										<option value="Chile">Chile</option>
+										<option value="Colombia">Colombia</option>
+										<option value="Ecuador">Ecuador</option>
+										<option value="Peru">Peru</option>
+										<option value="Uruguay">Uruguay</option>
+										<option value="Venezuela">Venezuela</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 mt-2">
+									<label for="first-employer-zip" aria-label="first-employer-zip">Zip:</label>
+									<input type="text" class="form-control" id="first-employer-zip" required />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group">
+									<label for="first-employer-phone" aria-label="first-employer-phone">Primary Phone:</label>
+									<input
+										type="tel"
+										class="form-control"
+										id="first-employer-phone"
+										aria-label="first-employer-phone"
+										placeholder="Enter Phone - (800)-888-1234"
+										required />
+								</div>
+								<div class="form-group">
+									<label for="first-employer-email" aria-label="first-employer-email">Primary Email:</label>
+									<input
+										type="email"
+										class="form-control"
+										id="first-employer-email"
+										placeholder="Enter Phone - (800)-888-1234"
+										required />
+								</div>
+								<div class="form-group mt-2">
+									<label for="first-employer-position" aria-label="first-employer-position">Position:</label>
+									<input
+										type="text"
+										class="form-control"
+										id="first-employer-position"
+										placeholder="Position Title..."
+										required />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col">
+									<label for="start-first-employer-date" aria-label="start-first-employer-date">Start Date:</label>
+									<input type="datetime-local" class="form-control" id="start-first-employer-date" required />
+								</div>
+								<div class="form-group mt-2">
+									<label for="end-first-employer-date" aria-label="end-first-employer-date">End Date:</label>
+									<input type="datetime-local" class="form-control" id="end-first-employer-date" required />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="specific-duties-one" aria-label="Job Responsibilities">Specific Duties:</label>
+								<textarea
+									class="form-control"
+									id="specific-duties-one"
+									rows="4"
+									placeholder="Enter Job Responsibilities Here:"></textarea>
+							</div>
+							<button
+								class="btn btn-primary btn-add-section mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Add Additional Work Experience"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-work-experience"
+								data-bs-target=".employer2">
+								<i class="fas fa-plus fa-lg" id="add-icon-one"></i>
+							</button>
+							<button
+								class="btn btn-danger btn-remove-section d-none mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Remove Additional Work Experience"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-experience-remove"
+								data-bs-target=".employer2">
+								<i class="fas fa-minus fa-lg" id="rem-icon-ex2"></i>
+							</button>
+						</div>
+
+						<div class="employer2 mt-5 my-auto d-none info-section">
+							<h4 class="h4">
+								Employer #2
+								<hr class="line" />
+							</h4>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="second-employer-name" aria-label="second-employer-name">Employer Name</label>
+									<input type="text" class="form-control" id="second-employer-name" placeholder="Employer Name" />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="second-employer-address" aria-label="second-employer-address"
+									>Street Address or PO Box Number</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="second-employer-address"
+									placeholder="1632 Yellowstone Ln" />
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col-md-6">
+									<label for="second-employer-city" aria-label="second-employer-city">City</label>
+									<input type="text" class="form-control" id="second-employer-city" />
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="second-employer-state" aria-label="second-employer-state">State</label>
+									<select id="second-employer-state" class="form-control">
+										<option value="" disabled selected>Select a State</option>
+										<option value="AL">Alabama</option>
+										<option value="AK">Alaska</option>
+										<option value="AZ">Arizona</option>
+										<option value="AR">Arkansas</option>
+										<option value="CA">California</option>
+										<option value="CO">Colorado</option>
+										<option value="CT">Connecticut</option>
+										<option value="DE">Delaware</option>
+										<option value="DC">District Of Columbia</option>
+										<option value="FL">Florida</option>
+										<option value="GA">Georgia</option>
+										<option value="HI">Hawaii</option>
+										<option value="ID">Idaho</option>
+										<option value="IL">Illinois</option>
+										<option value="IN">Indiana</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+										<option value="LA">Louisiana</option>
+										<option value="ME">Maine</option>
+										<option value="MD">Maryland</option>
+										<option value="MA">Massachusetts</option>
+										<option value="MI">Michigan</option>
+										<option value="MN">Minnesota</option>
+										<option value="MS">Mississippi</option>
+										<option value="MO">Missouri</option>
+										<option value="MT">Montana</option>
+										<option value="NE">Nebraska</option>
+										<option value="NV">Nevada</option>
+										<option value="NH">New Hampshire</option>
+										<option value="NJ">New Jersey</option>
+										<option value="NM">New Mexico</option>
+										<option value="NY">New York</option>
+										<option value="NC">North Carolina</option>
+										<option value="ND">North Dakota</option>
+										<option value="OH">Ohio</option>
+										<option value="OK">Oklahoma</option>
+										<option value="OR">Oregon</option>
+										<option value="PA">Pennsylvania</option>
+										<option value="RI">Rhode Island</option>
+										<option value="SC">South Carolina</option>
+										<option value="SD">South Dakota</option>
+										<option value="TN">Tennessee</option>
+										<option value="TX">Texas</option>
+										<option value="UT">Utah</option>
+										<option value="VT">Vermont</option>
+										<option value="VA">Virginia</option>
+										<option value="WA">Washington</option>
+										<option value="WV">West Virginia</option>
+										<option value="WI">Wisconsin</option>
+										<option value="WY">Wyoming</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="second-employer-country" aria-label="second-employer-country">Country</label>
+									<select
+										type="text"
+										class="form-control"
+										id="second-employer-country"
+										placeholder="Select Country"
+										required>
+										<option value="" disabled selected>Select a Country</option>
+										<option value="United States">United States</option>
+										<option value="Canada">Canada</option>
+										<option value="Mexico">Mexico</option>
+										<option value="United Kingdom">United Kingdom</option>
+										<option value="Australia">Australia</option>
+										<option value="New Zealand">New Zealand</option>
+										<option value="China">China</option>
+										<option value="Japan">Japan</option>
+										<option value="India">India</option>
+										<option value="France">France</option>
+										<option value="Germany">Germany</option>
+										<option value="Italy">Italy</option>
+										<option value="Spain">Spain</option>
+										<option value="Russia">Russia</option>
+										<option value="South Korea">South Korea</option>
+										<option value="South Africa">South Africa</option>
+										<option value="South America">South America</option>
+										<option value="Norway">Norway</option>
+										<option value="Poland">Poland</option>
+										<option value="Portugal">Portugal</option>
+										<option value="Brazil">Brazil</option>
+										<option value="Argentina">Argentina</option>
+										<option value="Chile">Chile</option>
+										<option value="Colombia">Colombia</option>
+										<option value="Ecuador">Ecuador</option>
+										<option value="Peru">Peru</option>
+										<option value="Uruguay">Uruguay</option>
+										<option value="Venezuela">Venezuela</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 mt-2">
+									<label for="second-employer-zip" aria-label="second-employer-zip">Zip:</label>
+									<input type="text" class="form-control" id="second-employer-zip" />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group">
+									<label for="second-employer-phone" aria-label="second-employer-phone">Primary Phone:</label>
+									<input
+										type="tel"
+										class="form-control"
+										id="second-employer-phone"
+										aria-label="second-employer-phone"
+										placeholder="Enter Phone - (800)-888-1234" />
+								</div>
+								<div class="form-group">
+									<label for="second-employer-email" aria-label="second-employer-email">Primary Email:</label>
+									<input
+										type="email"
+										class="form-control"
+										id="second-employer-email"
+										placeholder="Enter Email - example@example.com" />
+								</div>
+								<div class="form-group mt-2">
+									<label for="second-employer-position" aria-label="second-employer-position">Position:</label>
+									<input
+										type="text"
+										class="form-control"
+										id="second-employer-position"
+										placeholder="Position Title.." />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col">
+									<label for="start-second-employer-date" aria-label="start-second-employer-date">Start Date:</label>
+									<input type="datetime-local" class="form-control" id="start-second-employer-date" />
+								</div>
+								<div class="form-group mt-2">
+									<label for="end-second-employer-date" aria-label="end-second-employer-date">End Date:</label>
+									<input type="datetime-local" class="form-control" id="end-second-employer-date" />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="specific-duties-two" aria-label="Job Responsibilities">Specific Duties:</label>
+								<textarea
+									class="form-control"
+									id="specific-duties-two"
+									rows="4"
+									placeholder="Enter Job Responsibilities Here:"></textarea>
+							</div>
+							<button
+								class="btn btn-primary btn-add-section mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Add More Work Experience"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-work-experience-two"
+								data-bs-target=".employer3">
+								<i class="fas fa-plus fa-lg" id="add-icon-one"></i>
+							</button>
+							<button
+								class="btn btn-danger btn-remove-section d-none mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Remove Additional Work Experience"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-experience-remove"
+								data-bs-target=".employer3">
+								<i class="fas fa-minus fa-lg" id="rem-icon-ex3"></i>
+							</button>
+						</div>
+
+						<div class="employer3 mt-5 my-auto d-none info-section">
+							<h4 class="h4">
+								Employer #3
+								<hr class="line" />
+							</h4>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="third-employer-name" aria-label="third-employer-name">Employer Name</label>
+									<input type="text" class="form-control" id="third-employer-name" placeholder="Employer Name" />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="third-employer-address" aria-label="third-employer-address"
+									>Street Address or PO Box Number</label
+								>
+								<input type="text" class="form-control" id="third-employer-address" placeholder="1632 Yellowstone Ln" />
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col-md-6">
+									<label for="third-employer-city" aria-label="third-employer-city">City</label>
+									<input type="text" class="form-control" id="third-employer-city" />
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="third-employer-state" aria-label="third-employer-state">State</label>
+									<select id="third-employer-state" class="form-control">
+										<option value="" disabled selected>Select a State</option>
+										<option value="AL">Alabama</option>
+										<option value="AK">Alaska</option>
+										<option value="AZ">Arizona</option>
+										<option value="AR">Arkansas</option>
+										<option value="CA">California</option>
+										<option value="CO">Colorado</option>
+										<option value="CT">Connecticut</option>
+										<option value="DE">Delaware</option>
+										<option value="DC">District Of Columbia</option>
+										<option value="FL">Florida</option>
+										<option value="GA">Georgia</option>
+										<option value="HI">Hawaii</option>
+										<option value="ID">Idaho</option>
+										<option value="IL">Illinois</option>
+										<option value="IN">Indiana</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+										<option value="LA">Louisiana</option>
+										<option value="ME">Maine</option>
+										<option value="MD">Maryland</option>
+										<option value="MA">Massachusetts</option>
+										<option value="MI">Michigan</option>
+										<option value="MN">Minnesota</option>
+										<option value="MS">Mississippi</option>
+										<option value="MO">Missouri</option>
+										<option value="MT">Montana</option>
+										<option value="NE">Nebraska</option>
+										<option value="NV">Nevada</option>
+										<option value="NH">New Hampshire</option>
+										<option value="NJ">New Jersey</option>
+										<option value="NM">New Mexico</option>
+										<option value="NY">New York</option>
+										<option value="NC">North Carolina</option>
+										<option value="ND">North Dakota</option>
+										<option value="OH">Ohio</option>
+										<option value="OK">Oklahoma</option>
+										<option value="OR">Oregon</option>
+										<option value="PA">Pennsylvania</option>
+										<option value="RI">Rhode Island</option>
+										<option value="SC">South Carolina</option>
+										<option value="SD">South Dakota</option>
+										<option value="TN">Tennessee</option>
+										<option value="TX">Texas</option>
+										<option value="UT">Utah</option>
+										<option value="VT">Vermont</option>
+										<option value="VA">Virginia</option>
+										<option value="WA">Washington</option>
+										<option value="WV">West Virginia</option>
+										<option value="WI">Wisconsin</option>
+										<option value="WY">Wyoming</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6 mt-2">
+									<label for="third-employer-country" aria-label="third-employer-country">Country</label>
+									<select class="form-control" id="third-employer-country">
+										<option value="" disabled selected>Select a Country</option>
+										<option value="United States">United States</option>
+										<option value="Canada">Canada</option>
+										<option value="Mexico">Mexico</option>
+										<option value="United Kingdom">United Kingdom</option>
+										<option value="Australia">Australia</option>
+										<option value="New Zealand">New Zealand</option>
+										<option value="China">China</option>
+										<option value="Japan">Japan</option>
+										<option value="India">India</option>
+										<option value="France">France</option>
+										<option value="Germany">Germany</option>
+										<option value="Italy">Italy</option>
+										<option value="Spain">Spain</option>
+										<option value="Russia">Russia</option>
+										<option value="South Korea">South Korea</option>
+										<option value="South Africa">South Africa</option>
+										<option value="South America">South America</option>
+										<option value="Norway">Norway</option>
+										<option value="Poland">Poland</option>
+										<option value="Portugal">Portugal</option>
+										<option value="Brazil">Brazil</option>
+										<option value="Argentina">Argentina</option>
+										<option value="Chile">Chile</option>
+										<option value="Colombia">Colombia</option>
+										<option value="Ecuador">Ecuador</option>
+										<option value="Peru">Peru</option>
+										<option value="Uruguay">Uruguay</option>
+										<option value="Venezuela">Venezuela</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3 mt-2">
+									<label for="third-employer-zip" aria-label="third-employer-zip">Zip:</label>
+									<input type="text" class="form-control" id="third-employer-zip" />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group">
+									<label for="third-employer-phone" aria-label="third-employer-phone">Primary Phone:</label>
+									<input
+										type="tel"
+										class="form-control"
+										id="third-employer-phone"
+										aria-label="third-employer-phone"
+										placeholder="Enter Phone - (800)-888-1234" />
+								</div>
+								<div class="form-group">
+									<label for="third-employer-email" aria-label="third-employer-email">Primary Email:</label>
+									<input
+										type="email"
+										class="form-control"
+										id="third-employer-email"
+										placeholder="Enter Email - example@example.com" />
+								</div>
+								<div class="form-group mt-2">
+									<label for="third-employer-position" aria-label="third-employer-position">Position:</label>
+									<input type="text" class="form-control" id="third-employer-position" placeholder="Position Title.." />
+								</div>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col">
+									<label for="start-third-employer-date" aria-label="start-third-employer-date">Start Date:</label>
+									<input type="datetime-local" class="form-control" id="start-third-employer-date" />
+								</div>
+								<div class="form-group mt-2">
+									<label for="end-third-employer-date" aria-label="end-third-employer-date">End Date:</label>
+									<input type="datetime-local" class="form-control" id="end-third-employer-date" />
+								</div>
+							</div>
+							<div class="form-group mt-2">
+								<label for="specific-duties-three" aria-label="Job Responsibilities">Specific Duties:</label>
+								<textarea
+									class="form-control"
+									id="specific-duties-three"
+									rows="4"
+									placeholder="Enter Job Responsibilities Here:"></textarea>
+							</div>
+						</div>
+
+						<button
+							class="btn btn-primary btn-continue class mt-2 mb-2"
+							id="work-experience-section-button"
+							type="button"
+							data-bs-target="#education-section">
+							Continue
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- ****************************************EDUCATION******************************************* -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="education-info-container"
+				style="max-width: 600px">
+				<div class="tab-pane fade" id="education-section" role="tabpanel" aria-labelledby="education-tab">
+					<form class="needs-validation" novalidate>
+						<h1 class="section-title">EDUCATION</h1>
+						<div class="info-section mt-5 my-auto">
+							<h4 class="section-title-sub">
+								Education #1
+								<hr class="line" />
+							</h4>
+							<div class="form-row mt-3 mb-4 education">
+								<div class="col">
+									<label for="first-school-name">School Name:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Name of School Attended..."
+										id="first-school-name" />
+								</div>
+								<div class="col my-2">
+									<label for="first-location">School Location:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Location of School Attended..."
+										id="first-location" />
+								</div>
+								<div class="col my-2">
+									<label for="first-degree-type">Select your degree type:</label>
+									<select class="form-control" id="first-degree-type">
+										<option value="" disabled selected>Please Choose Option...</option>
+										<option>Graduate Degree</option>
+										<option>Bachelor Degree</option>
+										<option>Associate degree</option>
+										<option>Not completed</option>
+									</select>
+								</div>
+								<div class="col my-2">
+									<label for="first-study-field">Field of Study:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Enter Field of Study..."
+										id="first-study-field" />
+								</div>
+								<div class="col my-2">
+									<div>
+										<p>Did you graduate?</p>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline my-2" id="first-grad-question">
+										<input
+											type="radio"
+											id="flexRadioDefault5"
+											name="firstCustomRadioInline"
+											class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault5">Yes</label>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline">
+										<input
+											type="radio"
+											id="flexRadioDefault6"
+											name="firstCustomRadioInline"
+											class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault6">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-row mb-2">
+							<label for="additional-training-2"><strong>Additional School/Training/Special Skills</strong></label>
+							<input type="text" class="form-control" placeholder="" id="additional-training-2" />
+						</div>
+
+						<div class="form-row">
+							<label for="additional-edu-information"
+								><strong>Additional Info/Application Requests/Location Request</strong></label
+							>
+							<input type="text" class="form-control" placeholder="" id="additional-edu-information" />
+						</div>
+						<div class="d-flex d-inline-block">
+							<button
+								class="btn btn-primary btn-add-section mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Add More Education"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-education-add"
+								data-bs-target=".education2">
+								<i class="fas fa-plus fa-lg" id="add-icon-one"></i>
+							</button>
+							<button
+								class="btn btn-danger btn-remove-section d-none mt-2 d-flex text-align-center justify-content-center"
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-placement="right"
+								data-bs-title="Remove Education"
+								data-bs-custom-class="custom-tooltip"
+								id="additional-education-remove"
+								data-bs-target=".education2">
+								<i class="fas fa-minus fa-lg" id="rem-icon-one"></i>
+							</button>
+						</div>
+						<div class="education2 info-section mt-5 d-none my-auto">
+							<h4 class="h4">
+								Education #2
+								<hr class="line" />
+							</h4>
+							<div class="form-row mt-3 mb-4">
+								<div class="col">
+									<label for="second-school-name">School Name:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Name of School Attended..."
+										id="second-school-name" />
+								</div>
+								<div class="col my-2">
+									<label for="second-location">School Location:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Location of School Attended..."
+										id="second-location" />
+								</div>
+								<div class="col my-2">
+									<label for="second-degree-type">Select your degree type:</label>
+									<select class="form-control" id="second-degree-type">
+										<option value="" disabled selected>Please Choose Option...</option>
+										<option>Graduate Degree</option>
+										<option>Bachelor Degree</option>
+										<option>Associate degree</option>
+										<option>Not completed</option>
+									</select>
+								</div>
+								<div class="col my-2">
+									<label for="second-sudy-field">Field of Study:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Enter Field of Study..."
+										id="second-sudy-field" />
+								</div>
+								<div class="col my-2">
+									<div>
+										<p>Did you graduate?</p>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline my-2" id="second-grad-question">
+										<input type="radio" id="flexRadioDefault7" name="secondCustomRadio" class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault7">Yes</label>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline">
+										<input type="radio" id="flexRadioDefault8" name="secondCustomRadio" class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault8">No</label>
+									</div>
+								</div>
+							</div>
+							<div>
+								<button
+									class="btn btn-primary btn-add-section mt-2 d-flex text-align-center justify-content-center"
+									type="button"
+									data-bs-toggle="tooltip"
+									data-bs-placement="right"
+									data-bs-title="Add More Education"
+									data-bs-custom-class="custom-tooltip"
+									id="additional-education2-add"
+									data-bs-target=".education3">
+									<i class="fas fa-plus fa-lg" id="add-ico-two"></i>
+								</button>
+								<button
+									class="btn btn-danger btn-remove-section d-none mt-2 d-flex text-align-center justify-content-center"
+									type="button"
+									data-bs-toggle="tooltip"
+									data-bs-placement="right"
+									data-bs-title="Remove Additional Education"
+									data-bs-custom-class="custom-tooltip"
+									id="additional-education2-remove"
+									data-bs-target=".education3">
+									<i class="fas fa-minus fa-lg" id="rem-icon-two"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="education3 info-section mt-5 d-none my-auto">
+							<h4 class="h4">
+								Education #3
+								<hr class="line" />
+							</h4>
+							<div class="form-row mt-3 mb-4">
+								<div class="col">
+									<label for="third-school-name">School Name:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Name of School Attended..."
+										id="third-school-name" />
+								</div>
+								<div class="col my-2">
+									<label for="third-location">School Location:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Location of School Attended..."
+										id="third-location" />
+								</div>
+								<div class="col my-2">
+									<label for="third-degree-type">Select your degree type:</label>
+									<select class="form-control" id="third-degree-type">
+										<option value="" disabled selected>Please Choose Option...</option>
+										<option>Graduate Degree</option>
+										<option>Bachelor Degree</option>
+										<option>Associate degree</option>
+										<option>Not completed</option>
+									</select>
+								</div>
+								<div class="col my-2">
+									<label for="third-study-field">Field of Study:</label>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="Enter Field of Study..."
+										id="third-study-field" />
+								</div>
+								<div class="col my-2">
+									<div>
+										<p>Did you graduate?</p>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline my-2" id="third-graduated-question">
+										<input type="radio" id="flexRadioDefault9" name="thirdCustomRadio" class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault9">Yes</label>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline">
+										<input type="radio" id="flexRadioDefault10" name="thirdCustomRadio" class="custom-control-input" />
+										<label class="custom-control-label" for="flexRadioDefault10">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button
+							class="btn btn-primary btn-continue class mt-2 mb-2"
+							id="education-section-button"
+							type="button"
+							data-bs-target="#work-ability-section">
+							Continue
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- //****************************************workAbility*****************************************// -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="availability-info-container"
+				style="max-width: 600px">
+				<div class="tab-pane fade" id="work-ability-section" role="tabpanel" aria-labelledby="work-ability-tab">
+					<form class="my-2 needs-validation" novalidate>
+						<h1 class="section-title">Work Eligibility</h1>
+						<div class="form-row">
+							<p class="mt-2">
+								In accordance with the Immigration Reform and Control Act of 1986, upon acceptance for employment you
+								will be required to provide proof of your identity and eligibility to work in the United States.
+							</p>
+						</div>
+
+						<div class="form-row">
+							<h6 class="me-3">Can you provide proof that you are eligible to work in the United States?</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input
+									type="radio"
+									id="flexRadioDefault11"
+									name="eligibleToWork"
+									class="custom-control-input"
+									required />
+								<label class="custom-control-label" for="flexRadioDefault11">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input
+									type="radio"
+									id="flexRadioDefault12"
+									name="eligibleToWork"
+									class="custom-control-input"
+									required />
+								<label class="custom-control-label" for="flexRadioDefault12">No</label>
+							</div>
+						</div>
+						<div class="form-row mt-2">
+							<p>
+								INTERNATIONAL APPLICANTS YOU MUST HAVE A SPONSORING AGENCY TO CONTINUE COMPLETING THIS APPLICATION
+								PLEASE SELECT FROM BELOW OPTIONS. THESE ARE THE ONLY SPONSORING AGENCIES WE ACCEPT.
+							</p>
+						</div>
+						<div class="form-row mt-2">
+							<label for="spondor">PLEASE SELECT FROM THE FOLLOWING:</label>
+							<select class="form-control" id="spondor">
+								<option value="" disabled selected>Please Choose an Option...</option>
+								<option>ASPIRE</option>
+								<option>CIEE</option>
+								<option>CCUSA</option>
+								<option>INTEREXCHANGE</option>
 							</select>
 						</div>
-					</div>
-					<button type="submit" id="positions-info-section-button" class="btn btn-primary">Next</button>
-				</form>
-			</section>
-			<!-- </div> -->
+
+						<div class="form-row">
+							<h6 class="me-3 mt-2">
+								Have you ever been convicted of a felony (including any pleas of "guilty" or "no contest") OR do you
+								have any outstanding wants or warrants? A Background Check is completed on all employees upon arrival to
+								Yellowstone. (Note: Conviction of a crime is not an automatic ban to employment - circumstances will be
+								considered.)
+							</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="felony" name="felony" class="custom-control-input" required />
+								<label class="custom-control-label" for="felony">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="nofelony" name="nofelony" class="custom-control-input" required />
+								<label class="custom-control-label" for="nofelony">No</label>
+							</div>
+						</div>
+						<div class="form-row mt-2">
+							<label for="yesFelon">If Yes, Please include details and dates</label>
+							<input type="text" class="form-control" id="yesFelon" />
+						</div>
+						<button
+							class="btn btn-primary btn-continue mt-2 mb-2"
+							id="work-ability-section-button"
+							type="button"
+							data-bs-target="#additional-info-section">
+							Continue
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- //*************************************Additional********************************************// -->
+			<div
+				class="container-fluid tab-content tab-content-container d-flex justify-content-center mx-auto my-auto"
+				id="additional-info-container"
+				style="max-width: 600px">
+				<div class="tab-pane fade" id="additional-info-section" role="tabpanel" aria-labelledby="additional-info-tab">
+					<form class="my-2 needs-validation" novalidate>
+						<h1 class="section-title">ADDITIONAL INFORMATION</h1>
+						<div class="form-row mt-2">
+							<h6 class="me-3 ms-1">
+								Have you ever worked for Xanterra Parks and Resorts, Amfac Park and Resorts, Fred Harvey or TWRS
+								company?
+							</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="prior-work-yes" name="prior-work" class="custom-control-input" />
+								<label class="custom-control-label" for="prior-work-yes">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="prior-work-no" name="prior-work" class="custom-control-input" />
+								<label class="custom-control-label" for="prior-work-no">No</label>
+							</div>
+						</div>
+						<div class="form-group mt-2">
+							<label for="employee-number">Please enter your employee number</label>
+							<input type="text" class="form-control" id="employee-number" placeholder="employee number..." />
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<div class="form-group mt-2">
+									<label for="input-location">Select last location worked at</label>
+									<select type="text" class="form-control" id="input-location">
+										<option value="" disabled selected>Please Choose an Option...</option>
+										<option>Corporate Headquarters</option>
+										<option>Bryce Canyon Lodge</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group col-md-4 mt-2">
+								<label for="startDate">Please select your start date</label>
+								<input type="datetime-local" class="form-control" id="startDate" />
+							</div>
+							<div class="form-group col-md-4 mt-2">
+								<label for="endDate">Please select your end date</label>
+								<input type="datetime-local" class="form-control" id="endDate" />
+							</div>
+						</div>
+
+						<div class="form-row mt-5">
+							<div class="form-group mt-2">
+								<h6>
+									Have you ever been employed under a different name with any Xanterra Parks and Resorts, Amfac Parks
+									and Resorts, Fred Harvey or TWRS company?
+								</h6>
+								<div class="custom-control custom-radio custom-control-inline mt-2">
+									<input type="radio" id="previous-name-yes" name="previous-name" class="custom-control-input" />
+									<label class="custom-control-label" for="previous-name-yes">Yes</label>
+								</div>
+								<div class="custom-control custom-radio custom-control-inline mt-2">
+									<input type="radio" id="previous-name-no" name="previous-name" class="custom-control-input" />
+									<label class="custom-control-label" for="previous-name-no">No</label>
+								</div>
+								<div class="form-group mt-2">
+									<label for="enter-name">Enter the previous name</label>
+									<input type="text" class="form-control" id="enter-name" placeholder="Previous Name..." />
+									<label for="prev-location">Select last location worked at</label
+									><select type="text" class="form-control" id="prev-location">
+										<option value="" disabled selected>Please Choose an Option...</option>
+										<option>Corporate Headquarters</option>
+										<option>Bryce Canyon Lodge</option>
+										<option>Burr Oak State Park</option>
+										<option>Crater Lake National Park</option>
+										<option>Everglades National Park</option>
+										<option>Furnace Creek Inn and Ranch</option>
+										<option>Geneva Marina</option>
+										<option>Gideon Putnam</option>
+										<option>Grand Canyon National Park - North Rim</option>
+										<option>Grand Canyon National Park - South Rim</option>
+										<option>Hueston Woods</option>
+										<option>Maumee Bay State Park</option>
+										<option>Mohican State Park Resort and Conference Center</option>
+										<option>Mount Rushmore</option>
+										<option>Painted Desert Oasis</option>
+										<option>Punderson Manor</option>
+										<option>Salt Fork Resort and State Park</option>
+										<option>Scotty's Castle</option>
+										<option>Shawnee State Park</option>
+										<option>Silverado Country Club and Resort</option>
+										<option>Stovepipe Wells</option>
+										<option>Yellowstone National Park</option>
+										<option>Zion National Park</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-row mt-5">
+							<div class="form-group">
+								<h6>Are you a spouse, dependent, relative, or Domestic Partner of a National Park Service employee?</h6>
+								<div class="custom-control custom-radio custom-control-inline mt-2">
+									<input type="radio" id="spouse-yes" name="spouse" class="custom-control-input" />
+									<label class="custom-control-label" for="spouse-yes">Yes</label>
+								</div>
+								<div class="custom-control custom-radio custom-control-inline mt-2">
+									<input type="radio" id="spouse-no" name="spouse" class="custom-control-input" />
+									<label class="custom-control-label" for="spouse-no">No</label>
+								</div>
+								<div class="form-group mt-2">
+									<label for="spouse-name">Enter the previous name</label>
+									<input type="text" class="form-control" id="spouse-name" placeholder="Previous Name..." />
+									<label for="spouse-location">Select the previous location</label>
+									<select type="text" class="form-control" id="spouse-location">
+										<option value="" disabled selected>Please Choose an Option...</option>
+										<option>Corporate Headquarters</option>
+										<option>Bryce Canyon Lodge</option>
+										<option>Burr Oak State Park</option>
+										<option>Crater Lake National Park</option>
+										<option>Everglades National Park</option>
+										<option>Furnace Creek Inn and Ranch</option>
+										<option>Geneva Marina</option>
+										<option>Gideon Putnam</option>
+										<option>Grand Canyon National Park - North Rim</option>
+										<option>Grand Canyon National Park - South Rim</option>
+										<option>Hueston Woods</option>
+										<option>Maumee Bay State Park</option>
+										<option>Mohican State Park Resort and Conference Center</option>
+										<option>Mount Rushmore</option>
+										<option>Painted Desert Oasis</option>
+										<option>Punderson Manor</option>
+										<option>Salt Fork Resort and State Park</option>
+										<option>Scotty's Castle</option>
+										<option>Shawnee State Park</option>
+										<option>Silverado Country Club and Resort</option>
+										<option>Stovepipe Wells</option>
+										<option>Yellowstone National Park</option>
+										<option>Zion National Park</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-row mt-5">
+							<label for="current-relatives"
+								>For certain positions and certain reporting relationships, we are unable to employ family relatives.
+								Please identify relative(s) currently employed by Xanterra Parks and Resorts, Amfac Park and Resorts,
+								Fred Harvey or TWRS company.</label
+							>
+							<input
+								type="text"
+								class="form-control"
+								id="current-relatives"
+								aria-describedby="current-employed=family" />
+						</div>
+
+						<div class="form-row">
+							<div class="form-group mt-2">
+								<label for="applyWFamily">Applying with a friend or spouse? Please provide his or her FULL name:</label>
+								<input type="text" class="form-control" id="applyWFamily" aria-describedby="current-employed=family" />
+							</div>
+						</div>
+						<div class="form-row mt-2">
+							<h6 class="mr-3">Are you traveling together?</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="travel-together-yes" name="travel-together" class="custom-control-input" />
+								<label class="custom-control-label" for="travel-together-yes">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="travel-together-no" name="travel-together" class="custom-control-input" />
+								<label class="custom-control-label" for="travel-together-no">No</label>
+							</div>
+						</div>
+						<div class="form-row mt-2">
+							<h6 class="me-3">Do you want to work in the same location?</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="work-location-yes" name="work-location" class="custom-control-input" />
+								<label class="custom-control-label" for="work-location-yes">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="work-location-no" name="work-location" class="custom-control-input" />
+								<label class="custom-control-label" for="work-location-no">No</label>
+							</div>
+						</div>
+
+						<div class="form-row mt-4">
+							<label for="housing-req"
+								>If you are hired and meet housing requirements, please indicate your housing preference</label
+							><select type="text" class="form-control" id="housing-req">
+								<option value="" disabled selected>Please Choose an Option...</option>
+								<option>Dormitory (must be 18 years or older; no housing available for children or pets)</option>
+								<option>RV or Trailer (this is your own self-contained vehicle; space is limited)</option>
+								<option>Local Resident</option>
+							</select>
+						</div>
+
+						<div class="form-row mt-4">
+							<h6 class="me-3 mt-4">
+								You must be 18 years of age or older to live in employee housing. Will you be 18 years of age or older
+								when you arrive in Yellowstone?
+							</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input
+									type="radio"
+									id="employee-housing-yes"
+									name="employee-housing"
+									class="custom-control-input"
+									required />
+								<label class="custom-control-label" for="employee-housing-yes">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input
+									type="radio"
+									id="employee-housing-no"
+									name="employee-housing"
+									class="custom-control-input"
+									required />
+								<label class="custom-control-label" for="employee-housing-no">No</label>
+							</div>
+						</div>
+
+						<div class="form-row">
+							<h6 class="me-3 mt-4">
+								Employees must be 21 years of age or older for jobs requiring the operation of certain vehicles or
+								serving alcohol in lounges/pubs. Are you 21 years of age or older?
+							</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="over-21-yes" name="over-21" class="custom-control-input" required />
+								<label class="custom-control-label" for="over-21-yes">Yes</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="over-21-no" name="over-21" class="custom-control-input" required />
+								<label class="custom-control-label" for="over-21-no">No</label>
+							</div>
+							<div class="form-row mt-2">
+								<div class="form-group col-md-6">
+									<label for="find-us">How Did You Hear About Us?</label>
+									<select type="text" class="form-control" id="find-us" required>
+										<option selected="selected" value="Y5100">You are a former YNP Employee</option>
+										<option>Referred by current/former Emp</option>
+										<option>Referred by friend or family</option>
+										<option>Visited Yellowstone</option>
+										<option>Coolworks</option>
+										<option>Other Seasonal Employer</option>
+										<option>College Career Office Poster</option>
+										<option>University Online Job Bank</option>
+										<option>Christ Ministry/Campus Crusade</option>
+										<option>Spoke with a Recruiter</option>
+										<option>Job Srvc/Job Services Poster</option>
+										<option>Social Networking Site</option>
+										<option>Print Media Directed @ Seniors</option>
+										<option>Not Listed</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-row mt-4">
+							It is the policy of this organization to provide equal employment opportunity to all qualified applicants
+							for employment without regard to race, color, religion, national origin, sex, age, veteran status or
+							disability. As an affirmative action employer under E.O. 11246, we invite all applicants to identify
+							themselves as indicated below.
+							<strong>
+								COMPLETION OF THIS INFORMATION IS VOLUNTARY, BUT IN NO WAY AFFECTS THE DECISION REGARDING YOUR
+								APPLICATION FOR EMPLOYMENT. THIS INFORMATION IS CONFIDENTIAL AND WILL BE MAINTAINED SEPARATELY FROM YOUR
+								APPLICATION FORM.
+							</strong>
+						</div>
+
+						<div class="form-row mt-3">
+							<h6 class="me-3">What is your gender?</h6>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="gender-male" name="gender" class="custom-control-input" />
+								<label class="custom-control-label" for="gender-male">Male</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="gender-female" name="gender" class="custom-control-input" />
+								<label class="custom-control-label" for="gender-female">Female</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline mt-2">
+								<input type="radio" id="no-answer" name="gender" class="custom-control-input" />
+								<label class="custom-control-label" for="no-answer">Prefer not to answer</label>
+							</div>
+						</div>
+
+						<div class="form-row mt-5">
+							<label for="ethnicity">What is your race/ethnic origin? (Please select only one)</label
+							><select type="text" class="form-control" id="ethnicity">
+								<option value="" disabled selected>Please Choose an Option...</option>
+								<option>Hispanic or Latino</option>
+								<option>White</option>
+								<option>Black or African American</option>
+								<option>Native Hawaiian or Other Pacific Islander</option>
+								<option>Asian</option>
+								<option>American Indian or Alaska Native</option>
+								<option>Two or More Races</option>
+								<option>I prefer not to answer</option>
+							</select>
+						</div>
+
+						<div class="form-row mt-5">
+							<strong>READ CAREFULLY BEFORE SUBMITTING THIS APPLICATION</strong>
+							<p>
+								By submitting this form, I declare my answers to the questions on this application and any attachment,
+								i.e. resume, etc., are true and accurate. Attachments CANNOT be sent with this online application. You
+								must send attachments to us by e-mail or fax. FAX:(307) 344-5441 E-mail:
+								<a href="mailto:info@yellowstonejobs.com">info@yellowstonejobs.com</a>. I authorize Xanterra Parks and
+								Resorts and any accredited public or private investigative agency or individual conducting my background
+								investigation to obtain and release any information relating to my background from individuals, schools,
+								employers, criminal justice agencies, governmental agencies, financial institutions, credit bureaus,
+								licensing agencies, or other sources of information in accordance with applicable laws for purposes of
+								making a determination of my suitability or eligibility for employment. If employed, I understand that I
+								must abide by the company's rules and regulations. I hereby consent to a drug screen as a condition of
+								employment, if required. I understand this document, any offer of employment or any other employment
+								related information does not constitute an employment contract. I understand employment is not a
+								specified term and is at the mutual consent of the employee and company. Accordingly, either the
+								employee or the company can terminate employment at will, with or without cause, at any time.
+							</p>
+						</div>
+
+						<div class="form row ms-3 mb-3">
+							<input type="checkbox" class="custom-control-input" id="info-consent" />
+							<label class="custom-control-label mt-2" for="info-consent">
+								If you have read, understand and agree to the above information, please check this box
+							</label>
+						</div>
+
+						<div class="form-row mt-2">
+							<strong>PLEASE, ONLY CLICK THE SUBMIT BUTTON ONE TIME</strong>
+						</div>
+						<div class="form-row mt-2">
+							<p>
+								Please do not submit more than one application per season--we will only review ONE application per
+								person. For changes, please e-mail your information to info@yellowstonejobs.com.
+							</p>
+						</div>
+						<button class="btn btn-primary mb-4" type="submit">Submit Application</button>
+					</form>
+				</div>
+			</div>
 		</div>
 
 		<!-- Include Bootstrap Bundle with Popper -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<script src="../js/bootstrap.js"></script>
-		<script src="../js/forms.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+		<script src="/js/bootstrap/bootstrap.bundle.js"></script>
+		<script src="/js/forms/forms.js"></script>
 	</body>
 </html>
